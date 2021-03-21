@@ -1,15 +1,15 @@
 const path = require('path');
 const webpack = require('webpack');
 var copyWebpackPlugin = require('copy-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 const bundleOutDir = './dist';
  
 module.exports = (env) => {
-    console.log('NODE_ENV: ', env.NODE_ENV); // 'local'
-    console.log('Production: ', env.production); // true
-
+    
     return [
         {
             mode: 'development' ,
+            devtool: 'eval-source-map',
             entry: './src/index.js',
             output: {
                 filename: 'sample-widget.js',
@@ -22,7 +22,13 @@ module.exports = (env) => {
                         patterns: [
                         {from: 'demo/' , to: path.resolve(bundleOutDir)}
                         ]  
-                    })     
+                    }),
+                    new Dotenv(
+                        {
+                            path: path.resolve('.env.local')
+                        }
+                    ) 
+                       
             ],
             module: {
                 rules: [

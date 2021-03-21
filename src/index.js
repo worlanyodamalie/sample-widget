@@ -1,6 +1,9 @@
 
-function app () {
-    alert("Sample widget")
+function app (window) {
+    // alert("Sample widget")
+    let configurations = {
+        default: true
+    }
 }
 
 app();

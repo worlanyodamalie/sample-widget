@@ -17,3 +17,10 @@ npm run build
 ```
 npm start
 ```
+
+> Resources
+```
+https://www.robinwieruch.de/webpack-advanced-setup-tutorial#webpacks-development-and-production-build
+
+https://blog.jenyay.com/building-javascript-widget/
+```
