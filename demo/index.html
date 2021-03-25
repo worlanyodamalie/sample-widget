@@ -7,6 +7,19 @@
 </head>
 <body>
     <h1>Hello, World. Widget Demo here</h1>
-    <script src="sample-widget.js"></script>
+     
+     <button id="appruve_widget">Appruve Widget</button>
+
+     <script>
+         (function (w,d,s,o,f,js,fjs) {
+            // store the queue in a global named by o(mbw1)
+            w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) };
+            js = d.createElement(s), fjs = d.getElementById('appruve_widget');
+            js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);
+        }(window, document, 'script', 'appruveWidget', 'sample-widget.js'));
+        appruveWidget('init', { default: true , id: "appruve_widget" });
+     </script>
+
+    <!-- <script src="sample-widget.js"></script> -->
 </body>
 </html>
